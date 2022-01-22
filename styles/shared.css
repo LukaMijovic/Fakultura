@@ -1,7 +1,21 @@
+html {
+    --color-primary-200: rgb(78, 103, 214);
+    --color-primary-400: rgb(44, 74, 204);
+
+    --color-secondary-400: rgb(179, 96, 218);
+    --color-secondary-600: rgb(139, 43, 184);
+}
+
+body {
+    margin: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--color-primary-400);
+    padding: 0 1rem;
 }
 
 header ul {
@@ -20,8 +34,26 @@ header li {
 
 header li a {
     text-decoration: none;
+    color: white;
+}
+
+header li a:hover {
+    color: var(--color-secondary-400);
+    cursor: pointer;
 }
 
 header #logo {
     font-family: "Dongle", sans-serif;
+    font-size: 3rem;
+    color: white;
+    margin: 0.2rem;
+}
+
+header #logo:hover {
+    color: var(--color-secondary-400);
+    cursor: pointer;
+}
+
+main {
+    padding: 0 1rem;
 }
