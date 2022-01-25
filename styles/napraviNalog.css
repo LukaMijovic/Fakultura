@@ -29,12 +29,15 @@ label{
 }
 
 button{
+    padding: 0.4rem 1rem;
+    border-style: none;
     color: white;
     background-color: var(--color-primary-200);
     border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.futer{
-    margin-top: 6rem;
+button:hover{
+    background-color: darkblue;
+    cursor: pointer;
 }
-
