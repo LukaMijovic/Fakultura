@@ -20,6 +20,7 @@ html {
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;
+
 }
 
 .card {
@@ -34,6 +35,7 @@ html {
 
 .container {
   padding: 0 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media screen and (max-width: 650px) {
@@ -68,8 +70,10 @@ html {
   border-radius: 10px;
 }
 
+
+
 .div1:hover{
-  background-color: var(--color-primary-500);
+  background-color: var(--color-secondary-400);
 }
 
 section{
