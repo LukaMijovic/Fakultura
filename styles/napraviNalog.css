@@ -2,6 +2,11 @@ body{
     background-color: rgb(185, 170, 250);
     font-family: "Montserrat", sans-serif;
 }
+
+.naslovKreiraj{
+    text-align: center;
+    color: black;
+}
 div{
     background-color: var(--color-secondary-400);
     margin: 2rem 1rem;
@@ -27,5 +32,9 @@ button{
     color: white;
     background-color: var(--color-primary-200);
     border-radius: 8px;
+}
+
+.futer{
+    margin-top: 6rem;
 }
 
