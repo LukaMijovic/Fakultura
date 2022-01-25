@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/napraviNalog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Napravi nalog</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="logo">Fakultura</h1>
+      <ul>
+        <li>
+          <a href="index.html">Početna</a>
+        </li>
+        <li>
+          <a href="napraviNalog.html">Napravi nalog</a>
+        </li>
+        <li>
+          <a href="">Prijavi se</a>
+        </li>
+        <li>
+          <a href="">Odjavi se</a>
+        </li>
+        <li>
+          <a href="">O nama</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div>
+        <form class="form">
+          <label for="email">Email</label>
+          <br />
+          <input type="text" id="email" name="email" size="24"/>
+          <br /><br />
+          <label for="sifra">Sifra</label>
+          <br />
+          <input type="password" id="sifra" name="sifra" size="24"/>
+          <br /><br />
+          <label for="korisnickoIme">Korisnicko ime</label>
+          <br />
+          <input type="text" id="korisnickoIme" name="korisnickoIme" size="24"/>
+          <br /><br />
+          <label for="fakultet">Fakultet</label>
+          <br />
+          <select id="fakultet" id="fakultet">
+            <option value="etf">Elektrotehnicki fakultet</option>
+            <option value="fon">Fakultet Organizacionih Nauka</option>
+            <option value="medicina">Medicinski fakultet</option>
+            <option value="ekof">Ekonomski fakultet</option>
+            <option value=""></option>
+          </select>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
