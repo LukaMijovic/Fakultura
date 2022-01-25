@@ -1,0 +1,118 @@
+header nav a{
+  color: var(--color-secondary-400);
+}
+
+header nav a:hover{
+  background-color: var(--color-secondary-400);
+  color: var(--color-primary-600);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background-color: var(--color-secondary-400);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+
+
+.container {
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+} 
+
+.naslov{
+  font-family: 'Bebas Neue', cursive;
+  text-align:center;
+  color: blue;
+  font-size: 30px;
+}
+
+.mapa{
+  border-radius: 10px; 
+  overflow: hidden; 
+  margin: 20px;
+  width: 80%;
+}
+
+.divmap{
+  text-align: center;
+}
+
+.div1{
+  background-color: var(--color-primary-600);
+  margin: auto;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.div1:hover{
+  background-color: var(--color-primary-500);
+}
+
+section{
+  padding-top:4rem ;
+  width: 100%;
+  margin: auto;
+} 
+
+details[open] summary ~ *
+{
+  animation: open 3s ease-in-out;
+}
+@keyframes open {
+  0%{  
+  opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+details summary{
+  position:relative;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight:300;
+  list-style: none;
+}
+
+footer {
+    background-color: blue;
+    height: 50px;
+    text-align: center;
+    padding: 2px;
+}
+
+footer p{
+    color: white;
+}
+
+details p{
+  font-size:1rem;
+  text-align: center;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
