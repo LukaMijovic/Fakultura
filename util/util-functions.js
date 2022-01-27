@@ -1,9 +1,16 @@
+const { ObjectId } = require("mongodb");
 const db = require("../data/database");
 
 async function getFakulteti() {
     const fakulteti = await db.getDb().collection("fakulteti").find().toArray();
     
     return fakulteti;
+}
+
+async function getOneFakultet(id) {
+    const fakultet = await db.getDb().collection("fakulteti").find({_id: new ObjectId(id)}).toArray();
+    //console.log(fakultet);
+    return fakultet;
 }
 
 async function getKorisnici() {
@@ -19,5 +26,6 @@ async function setKorisnici(noviKorisnik) {
 module.exports = {
     getFakulteti: getFakulteti,
     getKorisnici: getKorisnici,
-    setKorisnici: setKorisnici
+    setKorisnici: setKorisnici,
+    getOneFakultet: getOneFakultet
 };

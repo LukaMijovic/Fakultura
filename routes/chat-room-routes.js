@@ -4,11 +4,12 @@ const util = require("../util/util-functions");
 
 const router = express.Router();
 
-router.get("/:id", function (req, res) {
+router.get("/:id", async function (req, res) {
     const chatRoomId = req.params.id;
-    const fakulteti = util.getFakulteti();
+    const fakultet = await util.getOneFakultet(chatRoomId);
+    console.log(fakultet[0]);
 
-    res.render("chat-room", {id: chatRoomId});
+    res.render("chat-room", {id: chatRoomId, fakultet: fakultet[0]});
 });
 
 module.exports = router;
