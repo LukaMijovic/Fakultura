@@ -1,1 +1,9 @@
-[{"email":"test@test.com","sifra":"test123","korisnickoIme":"Tester1"}]
+[
+    {
+        "email": "test@test.com",
+        "sifra": "test123",
+        "korisnickoIme": "Tester1",
+        "fakultet": "fon",
+        "id": "073297aa-d5ea-40a0-b1b6-54f90be62884"
+    }
+]

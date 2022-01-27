@@ -1,7 +1,9 @@
 const path = require("path");
-const fs = require("fs");
 
 const express = require("express");
+const uuid = require("uuid");
+
+const util = require("./util/util-functions");
 
 const app = express();
 
@@ -12,8 +14,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}));
 
 app.get("/", function (req, res) {
-    const filePath = path.join(__dirname, "data", "fakulteti.json");
-    const fakulteti = JSON.parse(fs.readFileSync(filePath));
+    const fakulteti = util.getFakulteti();
+    
     res.render("index", {fakulteti: fakulteti});
 });
 
@@ -23,14 +25,12 @@ app.get("/napravi-nalog", function (req, res) {
 
 app.post("/napravi-nalog", function (req, res) {
     const noviKorisnik = req.body;
-    const filePath = path.join(__dirname, "data", "korisnici.json")
-
-    const fileData = fs.readFileSync(filePath);
-    const korisnici = JSON.parse(fileData);
+    noviKorisnik.id = uuid.v4();
+    const korisnici = util.getKorisnici();
 
     korisnici.push(noviKorisnik);
 
-    fs.writeFileSync(filePath, JSON.stringify(korisnici));
+    util.setKorisnici(korisnici);
 
     res.redirect("/");
 });
@@ -43,6 +43,11 @@ app.get("/o-nama", function (req, res) {
     res.render("o-nama");
 });
 
+app.get("/chat-room/:id", function (req, res) {
+    const chatRoomId = req.params.id;
+    const fakulteti = util.getFakulteti();
 
+    res.render("chat-room", {id: chatRoomId});
+});
 
 app.listen(3000);
