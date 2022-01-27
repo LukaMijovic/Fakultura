@@ -5,5 +5,12 @@
         "korisnickoIme": "Tester1",
         "fakultet": "fon",
         "id": "073297aa-d5ea-40a0-b1b6-54f90be62884"
+    },
+    {
+        "email": "test3@test.com",
+        "sifra": "test123",
+        "korisnickoIme": "Tester3",
+        "fakultet": "mf",
+        "id": "8c2b9625-3ccd-4b55-bc98-9a14d3a641fc"
     }
 ]
