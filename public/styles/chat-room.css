@@ -19,7 +19,25 @@ h1 {
 }
 
 section {
-    
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.poruka {
+    border-radius: 6px;
+    border-color: var(--color-primary-200);
+    border-style: solid;
+    padding: 0.3rem 1rem;
+    margin: 1rem;
+}
+
+.poruka h3 {
+    font-size: 1rem;
+}
+
+.poruka p {
+    font-size: 0.7rem;
 }
 
 footer {

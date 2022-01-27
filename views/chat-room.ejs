@@ -11,18 +11,23 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="/styles/shared.css">
     <link rel="stylesheet" href="/styles/chat-room.css">
+    <script src="/scripts/poruke.js" defer></script>
 </head>
 <body>
     <%- include("includes/header") %> 
     <main>
         <h1><%= fakultet.naziv %></h1>
         <section>
+            <%- include("includes/poruka") %> 
         </section>
+        <div>
+            <button id="primi" data-chatroomid="<%= fakultet._id %>">Ucitaj poruke</button>
+        </div>
     </main>
     <footer>
-        <form action="">
+        <form action="/chat/<%= fakultet._id %>" method="POST">
             <textarea name="poruka" id="" cols="30" rows="5" required>Upisite poruku</textarea>
-            <button>Posalji</button>
+            <button id="posalji" data-chatRoomId="<%= fakultet._id %>">Posalji</button>
         </form>
     </footer>
 </body>

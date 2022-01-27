@@ -23,9 +23,25 @@ async function setKorisnici(noviKorisnik) {
     const result = await db.getDb().collection("korisnici").insertOne(noviKorisnik);
 }
 
+async function sendNewMessage(tekstPoruke, idFakulteta) {
+    const poruka = {
+        tekstPoruke: tekstPoruke,
+        fakultet: idFakulteta
+    };
+    const result = await db.getDb().collection("poruke").insertOne(poruka);
+}
+
+async function getPoruke(fakultetId) {
+    const poruke = await db.getDb().collection("poruke").find({faksId: fakultetId}).toArray();
+    //console.log(fakultetId);
+    return poruke;
+}
+
 module.exports = {
     getFakulteti: getFakulteti,
     getKorisnici: getKorisnici,
     setKorisnici: setKorisnici,
-    getOneFakultet: getOneFakultet
+    getOneFakultet: getOneFakultet,
+    posaljiPoruku: sendNewMessage,
+    primiPoruke: getPoruke
 };
