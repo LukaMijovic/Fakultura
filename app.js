@@ -12,13 +12,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}));
 
 app.get("/", function (req, res) {
-   const filePath = path.join(__dirname, "views", "index.html");
-   res.sendFile(filePath);
+   res.render("index");
 });
 
 app.get("/napravi-nalog", function (req, res) {
-    const filePath = path.join(__dirname, "views", "napravi-nalog.html");
-    res.sendFile(filePath);
+    res.render("napravi-nalog");
 });
 
 app.post("/napravi-nalog", function (req, res) {
@@ -36,11 +34,11 @@ app.post("/napravi-nalog", function (req, res) {
 });
 
 app.get("/prijavi-se", function (req, res) {
-    
+    res.render("prijavi-se");
 });
 
 app.get("/o-nama", function (req, res) {
-    
+    res.render("o-nama");
 });
 
 
