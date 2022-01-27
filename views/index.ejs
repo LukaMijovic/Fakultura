@@ -15,52 +15,12 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="logo" >Fakultura</h1>
-        <ul>
-            <li>
-                <a href="/">Početna</a>
-            </li>
-            <li>
-                <a href="/napravi-nalog">Napravi nalog</a>
-            </li>
-            <li>
-                <a href="/prijavi-se">Prijavi se</a>
-            </li>
-            <li>
-                <a href="">Odjavi se</a>
-            </li>
-            <li>
-                <a href="/o-nama">O nama</a>
-            </li>
-        </ul>
-    </header>
+    <%- include("includes/header") %> 
     <main>
         <section>
-            <div class="chat-room">
-                <h3>Elektrotehnicki fakultet</h3>
-                <form action="" method="GET">
-                    <button>Udji</button>
-                </form>
-            </div>
-            <div class="chat-room">
-                <h3>Fakultet organizacionih nauka</h3>
-                <form action="" method="GET">
-                    <button>Udji</button>
-                </form>
-            </div>
-            <div class="chat-room">
-                <h3>Medicinski fakultet</h3>
-                <form action="" method="GET">
-                    <button>Udji</button>
-                </form>
-            </div>
-            <div class="chat-room">
-                <h3>Ekonomski fakultet</h3>
-                <form action="" method="GET">
-                    <button>Udji</button>
-                </form>
-            </div>
+            <% for (const fakultet of fakulteti) { %> 
+                <%- include("includes/chat-room-card", {fakultet: fakultet}) %> 
+            <% } %> 
         </section>
     </main>
 </body>

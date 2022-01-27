@@ -12,7 +12,9 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}));
 
 app.get("/", function (req, res) {
-   res.render("index");
+    const filePath = path.join(__dirname, "data", "fakulteti.json");
+    const fakulteti = JSON.parse(fs.readFileSync(filePath));
+    res.render("index", {fakulteti: fakulteti});
 });
 
 app.get("/napravi-nalog", function (req, res) {

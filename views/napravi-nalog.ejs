@@ -17,26 +17,7 @@
     <title>Napravi nalog</title>
   </head>
   <body>
-    <header>
-      <h1 id="logo">Fakultura</h1>
-      <ul>
-        <li>
-          <a href="/">Početna</a>
-        </li>
-        <li>
-          <a href="/napravi-nalog">Napravi nalog</a>
-        </li>
-        <li>
-          <a href="/prijavi-se">Prijavi se</a>
-        </li>
-        <li>
-          <a href="">Odjavi se</a>
-        </li>
-        <li>
-          <a href="/o-nama">O nama</a>
-        </li>
-      </ul>
-    </header>
+    <%- include("includes/header") %> 
     <main>
       <h1>Kreiraj nalog</h1>
       <form action="/napravi-nalog" method="POST">
