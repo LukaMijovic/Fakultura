@@ -5,6 +5,7 @@ const express = require("express");
 const defaultRoutes = require("./routes/default");
 const chatRoomRoutes = require("./routes/chat-room-routes");
 const accountRoutes = require("./routes/account-routes");
+const db = require("./data/database");
 
 const app = express();
 
@@ -18,4 +19,6 @@ app.use("/", defaultRoutes);
 app.use("/chat-room", chatRoomRoutes);
 app.use("/", accountRoutes);
 
-app.listen(3000);
+db.connectToDb().then(function () {
+    app.listen(3000);
+});

@@ -4,8 +4,15 @@ const util = require("../util/util-functions");
 
 const router = express.Router();
 
-router.get("/", function (req, res) {
-    const fakulteti = util.getFakulteti();
+router.get("/", async function (req, res) {
+    const fakulteti = await util.getFakulteti();
+
+    fakulteti.sort(function (fakA, fakB) {
+        if (fakA.naziv > fakB.naziv) {
+            return 1;
+        }
+        return -1;
+    });
     
     res.render("index", {fakulteti: fakulteti});
 });

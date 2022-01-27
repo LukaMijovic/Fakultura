@@ -39,10 +39,9 @@
             <label for="fakultet">Fakultet</label>
             <br />
             <select id="fakultet" name="fakultet">
-              <option value="etf">Elektrotehnicki fakultet</option>
-              <option value="fon">Fakultet Organizacionih Nauka</option>
-              <option value="mf">Medicinski fakultet</option>
-              <option value="ekof">Ekonomski fakultet</option>
+              <% for (const fakultet of fakulteti) { %> 
+                <option value="<%= fakultet._id %>"><%= fakultet.naziv %></option>
+              <% } %> 
             </select>
             <br /><br />
             <button>Reset</button>

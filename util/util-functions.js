@@ -1,24 +1,19 @@
-const fs = require("fs");
-const path = require("path");
+const db = require("../data/database");
 
-const filePathFakulteti = path.join(__dirname, "..", "data", "fakulteti.json");
-const filePathKorisnici = path.join(__dirname, "..","data", "korisnici.json");
-
-function getFakulteti() {
-    const fakulteti = JSON.parse(fs.readFileSync(filePathFakulteti));
-
+async function getFakulteti() {
+    const fakulteti = await db.getDb().collection("fakulteti").find().toArray();
+    
     return fakulteti;
 }
 
-function getKorisnici() {
-    const fileData = fs.readFileSync(filePathKorisnici);
-    const korisnici = JSON.parse(fileData);
+async function getKorisnici() {
+    const korisnici = await db.getDb().collection("korisnici").find().toArray();
 
     return korisnici;
 }
 
-function setKorisnici(korisnici) {
-    fs.writeFileSync(filePathKorisnici, JSON.stringify(korisnici));
+async function setKorisnici(noviKorisnik) {
+    const result = await db.getDb().collection("korisnici").insertOne(noviKorisnik);
 }
 
 module.exports = {
