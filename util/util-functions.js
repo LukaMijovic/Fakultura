@@ -23,12 +23,8 @@ async function setKorisnici(noviKorisnik) {
     const result = await db.getDb().collection("korisnici").insertOne(noviKorisnik);
 }
 
-async function sendNewMessage(tekstPoruke, idFakulteta) {
-    const poruka = {
-        tekstPoruke: tekstPoruke,
-        fakultet: idFakulteta
-    };
-    const result = await db.getDb().collection("poruke").insertOne(poruka);
+async function sendNewMessage(novaPoruka) {
+    const result = await db.getDb().collection("poruke").insertOne(novaPoruka);
 }
 
 async function getPoruke(fakultetId) {

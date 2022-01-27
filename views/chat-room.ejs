@@ -17,17 +17,17 @@
     <%- include("includes/header") %> 
     <main>
         <h1><%= fakultet.naziv %></h1>
-        <section>
-            <%- include("includes/poruka") %> 
+        <section id="prostorZaPoruke">
+            
         </section>
         <div>
             <button id="primi" data-chatroomid="<%= fakultet._id %>">Ucitaj poruke</button>
         </div>
     </main>
     <footer>
-        <form action="/chat/<%= fakultet._id %>" method="POST">
-            <textarea name="poruka" id="" cols="30" rows="5" required>Upisite poruku</textarea>
-            <button id="posalji" data-chatRoomId="<%= fakultet._id %>">Posalji</button>
+        <form id="formaZaSlanjePoruka">
+            <textarea name="poruka" id="poruka" cols="30" rows="5" required>Upisite poruku</textarea>
+            <button id="posalji" data-chatroomid="<%= fakultet._id %>">Posalji</button>
         </form>
     </footer>
 </body>

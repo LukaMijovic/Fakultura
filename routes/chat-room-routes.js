@@ -13,14 +13,24 @@ router.get("/:id", async function (req, res) {
     res.render("chat-room", {id: chatRoomId, fakultet: fakultet[0]});
 });
 
-// router.post("/:id", async function (req, res) {
-//     const tekstPoruke = req.params.poruka;
-//     const faksId = 
+router.post("/:id/poruke", async function (req, res) {
+    // const tekstPoruke = req.params.poruka;
+    // const faksId = 
 
-//     posaljiPoruku(tekstPoruke);
+    // posaljiPoruku(tekstPoruke);
 
-//     res.render("chat-room");
-// });
+    // res.render("chat-room");
+    const chatRoomId = new ObjectId(req.params.id);
+    const novaPoruka = {
+        tekstPoruke: req.body.tekstPoruke,
+        faksId: chatRoomId,
+        autor: req.body.autor
+    };
+
+    await util.posaljiPoruku(novaPoruka);
+
+    res.json({});
+});
 
 router.get("/:id/poruke", async function (req, res) {
     const chatRoomId = new ObjectId(req.params.id);

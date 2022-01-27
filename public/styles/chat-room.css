@@ -13,6 +13,11 @@ main {
     flex-grow: 1;
 }
 
+ol {
+    list-style: none;
+    padding: 0;
+}
+
 h1 {
     font-family: "Dongle", sans-serif;
     font-size: 3rem;
