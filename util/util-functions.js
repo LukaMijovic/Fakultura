@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongodb");
-const db = require("../data/database");
+const db = require("../data/database"); //poziv database i mongodb
 
 async function getFakulteti() {
     const fakulteti = await db.getDb().collection("fakulteti").find().toArray();

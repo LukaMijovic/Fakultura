@@ -3,11 +3,11 @@ const express = require("express");
 const util = require("../util/util-functions");
 
 const router = express.Router();
-
+//router je app samo u ovom fajlu
 router.get("/", async function (req, res) {
     const fakulteti = await util.getFakulteti();
 
-    fakulteti.sort(function (fakA, fakB) {
+    fakulteti.sort(function (fakA, fakB) { //sortiranje kartica sa fakultetima
         if (fakA.naziv > fakB.naziv) {
             return 1;
         }

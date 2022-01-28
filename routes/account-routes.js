@@ -14,11 +14,11 @@ router.get("/napravi-nalog", async function (req, res) {
 });
 
 router.post("/napravi-nalog", async function (req, res) {
-    const fakultetId = req.body.fakultet;
+    const fakultetId = req.body.fakultet; //req.body je telo poruke
     //console.log(fakultetId);
     const fakultet = await db.getDb().collection("fakulteti").findOne({_id: fakultetId});
 
-    const noviKorisnik = {
+    const noviKorisnik = { //pravimo novog korisnika
         korisnickoIme: req.body.korisnickoIme,
         email: req.body.email,
         sifra: req.body.sifra,
