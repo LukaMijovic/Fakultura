@@ -1,5 +1,6 @@
 const express = require("express");
 const {ObjectId} = require("mongodb");
+const { connectToDb } = require("../data/database");
 
 const util = require("../util/util-functions");
 
@@ -7,6 +8,7 @@ const router = express.Router();
 
 router.get("/:id", async function (req, res) {
     const chatRoomId = req.params.id;
+    console.log(chatRoomId);
     const fakultet = await util.getOneFakultet(chatRoomId);
     //console.log(req.session.user.faksId);
     if (!req.session.prijavljen || !(req.session.user.faksId == chatRoomId)) {
@@ -23,10 +25,11 @@ router.post("/:id/poruke", async function (req, res) {
     // posaljiPoruku(tekstPoruke);
 
     // res.render("chat-room");
-    const chatRoomId = new ObjectId(req.params.id);
+    const chatRoomId = req.params.id;
+   // console.log(chatRoomId);
     const novaPoruka = {
         tekstPoruke: req.body.tekstPoruke,
-        faksId: chatRoomId,
+        faksId: new ObjectId(chatRoomId),
         autor: req.body.autor
     };
 

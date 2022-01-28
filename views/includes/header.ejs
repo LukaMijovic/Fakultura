@@ -4,17 +4,21 @@
         <li>
             <a href="/">Početna</a>
         </li>
-        <li>
-            <a href="/napravi-nalog">Napravi nalog</a>
-        </li>
-        <li>
-            <a href="/prijavi-se">Prijavi se</a>
-        </li>
-        <li>
-            <form action="/odjavi-se" method="POST">
-                <button>Odjavi se</button>
-            </form>
-        </li>
+        <% if (!locals.daLiJePrijavljen) { %> 
+            <li>
+                <a href="/napravi-nalog">Napravi nalog</a>
+            </li>
+            <li>
+                <a href="/prijavi-se">Prijavi se</a>
+            </li>
+        <% } %>
+        <% if (locals.daLiJePrijavljen) { %> 
+            <li>
+                <form action="/odjavi-se" method="POST">
+                    <button>Odjavi se</button>
+                </form>
+            </li>
+        <% } %>
         <li>
             <a href="/o-nama">O nama</a>
         </li>

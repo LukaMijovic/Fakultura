@@ -55,7 +55,8 @@ router.post("/prijavi-se", async function (req, res){
     req.session.user = {
         id: postojeciKorisnik[0]._id,
         email: postojeciKorisnik[0].email,
-        faksId: postojeciKorisnik[0].faksId
+        faksId: postojeciKorisnik[0].faksId,
+        korisnickoIme: postojeciKorisnik[0].korisnickoIme
     };
     req.session.prijavljen = true;
     req.session.save(function () {

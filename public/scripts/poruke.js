@@ -1,3 +1,4 @@
+const socket = io("http://localhost:3001");
 
 const primiBtn = document.getElementById("primi");
 const posaljiBtn = document.getElementById("posalji");
@@ -26,7 +27,7 @@ async function primiPoruku() {
     //console.log(chatRoomId);
     const res = await fetch(`/chat-room/${chatRoomId}/poruke`);
     const data = await res.json();
-    console.log(data);
+    //console.log(locals.korsnickoIme);
 
     const listaPoruka = napraviChat(data);
     prostorZaPoruke.innerHTML = "";
@@ -43,7 +44,7 @@ async function posaljiPoruku(event) {
     const poruka = {
         tekstPoruke: unesenaPoruka,
         faksId: chatRoomId,
-        autor: "TestIme"
+        autor: "IME"
     };
 
     const res = await fetch(`/chat-room/${chatRoomId}/poruke`, {
