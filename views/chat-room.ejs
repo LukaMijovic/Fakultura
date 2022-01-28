@@ -11,9 +11,10 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="/styles/shared.css">
     <link rel="stylesheet" href="/styles/chat-room.css">
+    <script src="/http://localhost:3001/socket.io/socket.io.js" defer></script>
     <script src="/scripts/poruke.js" defer></script>
 </head>
-<body>
+<body id="telo">
     <%- include("includes/header") %> 
     <main>
         <h1><%= fakultet.naziv %></h1>
@@ -21,7 +22,7 @@
             
         </section>
         <div>
-            <button id="primi" data-chatroomid="<%= fakultet._id %>">Ucitaj poruke</button>
+            <button id="primi" data-chatroomid="<%= fakultet._id %>" data-korisnickoime="<%= korisnickoIme %>">Ucitaj poruke</button>
         </div>
     </main>
     <footer>

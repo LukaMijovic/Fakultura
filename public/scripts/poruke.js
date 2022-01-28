@@ -1,10 +1,10 @@
-const socket = io("http://localhost:3001");
-
+const stranica = document.getElementById("telo");
 const primiBtn = document.getElementById("primi");
 const posaljiBtn = document.getElementById("posalji");
 const prostorZaPoruke = document.getElementById("prostorZaPoruke");
 const formaZaSlanjePoruka = document.getElementById("formaZaSlanjePoruka");
 const prostorZaPoruku = document.getElementById("poruka");
+
 
 function napraviChat(poruke) {
     const chatLista = document.createElement("ol");
@@ -13,7 +13,7 @@ function napraviChat(poruke) {
         const porukaElement = document.createElement("li")
         porukaElement.innerHTML = `
             <div class="poruka">
-                <h3>IME:</h3>
+                <h3>${poruka.autor}</h3>
                 <p>${poruka.tekstPoruke}</p>
             </div> 
         `;
@@ -38,13 +38,14 @@ async function posaljiPoruku(event) {
     event.preventDefault();
 
     const chatRoomId = posaljiBtn.dataset.chatroomid;
+    const korisnickoIme = primiBtn.dataset.korisnickoime;
 
     const unesenaPoruka = prostorZaPoruku.value;
 
     const poruka = {
         tekstPoruke: unesenaPoruka,
         faksId: chatRoomId,
-        autor: "IME"
+        autor: korisnickoIme
     };
 
     const res = await fetch(`/chat-room/${chatRoomId}/poruke`, {
@@ -62,3 +63,4 @@ async function posaljiPoruku(event) {
 
 primiBtn.addEventListener("click", primiPoruku);
 formaZaSlanjePoruka.addEventListener("submit", posaljiPoruku);
+stranica.addEventListener("mousemove", primiPoruku);

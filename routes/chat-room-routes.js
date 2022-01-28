@@ -1,3 +1,4 @@
+
 const express = require("express");
 const {ObjectId} = require("mongodb");
 const { connectToDb } = require("../data/database");
@@ -15,7 +16,10 @@ router.get("/:id", async function (req, res) {
         return res.status(401).redirect("/");
     }
 
-    res.render("chat-room", {id: chatRoomId, fakultet: fakultet[0]});
+    const korisnickoIme = req.session.user.korisnickoIme;
+    console.log(korisnickoIme);
+
+    res.render("chat-room", {id: chatRoomId, fakultet: fakultet[0], korisnickoIme: korisnickoIme});
 });
 
 router.post("/:id/poruke", async function (req, res) {

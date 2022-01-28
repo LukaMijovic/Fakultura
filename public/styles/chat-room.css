@@ -45,6 +45,10 @@ section {
     font-size: 0.7rem;
 }
 
+#primi {
+    display: none;
+}
+
 footer {
     background-color: var(--color-secondary-400);
     padding: 1rem 2rem;
