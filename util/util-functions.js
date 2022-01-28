@@ -19,6 +19,12 @@ async function getKorisnici() {
     return korisnici;
 }
 
+async function getOneKorisnik(email) {
+    const korisnik = await db.getDb().collection("korisnici").find({email: email}).toArray();
+
+    return korisnik;
+}
+
 async function setKorisnici(noviKorisnik) {
     const result = await db.getDb().collection("korisnici").insertOne(noviKorisnik);
 }
@@ -39,5 +45,6 @@ module.exports = {
     setKorisnici: setKorisnici,
     getOneFakultet: getOneFakultet,
     posaljiPoruku: sendNewMessage,
-    primiPoruke: getPoruke
+    primiPoruke: getPoruke,
+    getOneKorisnik: getOneKorisnik
 };

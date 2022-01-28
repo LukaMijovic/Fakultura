@@ -18,7 +18,7 @@
     <%- include("includes/header") %> 
     <main>
         <h1>Prijava</h1>
-        <form>
+        <form action="/prijavi-se" method="POST">
             <div>
                 <label for="email">Email</label>
               <br />
@@ -28,7 +28,6 @@
               <br />
               <input type="password" id="sifra" name="sifra" size="24" required/>
               <br><br>  
-              <button>Resetuj</button>
               <button>Prijavi se</button>
             </div>
         </form>

@@ -46,13 +46,17 @@ async function posaljiPoruku(event) {
         autor: "TestIme"
     };
 
-    await fetch(`/chat-room/${chatRoomId}/poruke`, {
+    const res = await fetch(`/chat-room/${chatRoomId}/poruke`, {
         method: "POST",
         body: JSON.stringify(poruka),
         headers: {
             "Content-Type": "application/json",
         }
     });
+
+    prostorZaPoruku.value = "";
+
+    primiPoruku();
 }
 
 primiBtn.addEventListener("click", primiPoruku);

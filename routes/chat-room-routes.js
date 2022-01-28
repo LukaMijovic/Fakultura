@@ -8,7 +8,10 @@ const router = express.Router();
 router.get("/:id", async function (req, res) {
     const chatRoomId = req.params.id;
     const fakultet = await util.getOneFakultet(chatRoomId);
-    console.log(fakultet[0]);
+    //console.log(req.session.user.faksId);
+    if (!req.session.prijavljen || !(req.session.user.faksId == chatRoomId)) {
+        return res.status(401).redirect("/");
+    }
 
     res.render("chat-room", {id: chatRoomId, fakultet: fakultet[0]});
 });
