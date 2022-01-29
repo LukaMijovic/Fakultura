@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express"); //import express paketa
 const session = require("express-session");
 const mongodbStore = require("connect-mongodb-session");
+const io = require("socket.io")(3001);
 
 const defaultRoutes = require("./routes/default");
 const chatRoomRoutes = require("./routes/chat-room-routes");
